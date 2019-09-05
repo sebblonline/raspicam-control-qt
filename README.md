@@ -1,6 +1,6 @@
 # RaspiCam control GUI
 
-Simple client GUI to view live images from a Raspberry Pi camera. It works together with the [raspicam-daemon]() server app.
+Simple client GUI to view live images from a Raspberry Pi camera. It works together with the [raspicam-daemon](https://github.com/sebblonline/raspicam-daemon) server app.
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ I prefer Qt Creator which I used for development and works out of the box. But t
 
 ## Related projects
 
-*TODO*
-[raspicam-daemon]()
+[raspicam-daemon](https://github.com/sebblonline/raspicam-daemon)
 
 ## Future plans
 
 * Add interface to receive configuration settings
-* Build as an Android app
+* Build as mobile app
+* ...
 
 ## Contribution
 
@@ -42,7 +42,7 @@ I prefer Qt Creator which I used for development and works out of the box. But t
 
 ## Authors
 
-* **Sebastian Reichert** - *Initial work* - [sebblonline](https://github.com/sebblonline)
+* [sebblonline](https://github.com/sebblonline)
 
 
 ## License
