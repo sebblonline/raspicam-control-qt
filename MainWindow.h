@@ -32,9 +32,6 @@ private:
     ControlInterface *m_rpiControlInterface = nullptr;
 
     bool m_rpiConnected = false;
-
-    const int m_imageWidth = 640;
-    const int m_imageHeight = 480;
 };
 
 #endif // MAINWINDOW_H

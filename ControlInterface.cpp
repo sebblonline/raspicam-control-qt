@@ -1,7 +1,5 @@
 #include "ControlInterface.h"
 
-#include <QDataStream>
-
 ControlInterface::ControlInterface(QObject *parent)
     :QObject (parent)
 {
@@ -18,7 +16,7 @@ void ControlInterface::connectToServer(const QString& ipAddr, uint16_t port)
     QByteArray data("hello");
 
     socket_.connectToHost(ipAddr, port);
-    if( socket_.waitForConnected() )
+    if( socket_.waitForConnected(3000) )
     {
         socket_.write( data );
         emit connectedToServer();

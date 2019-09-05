@@ -4,7 +4,6 @@ const int StreamInterface::STREAM_PORT = 8082;
 
 StreamInterface::StreamInterface(QObject *parent)
     :QObject (parent),
-    m_imageSize(307200),
     m_bytesLeft(0)
 {
     m_streamConnection = new QTcpServer(this);
@@ -38,8 +37,18 @@ void StreamInterface::readPendingImageStreamPackets()
 
     if (0 == m_bytesLeft)
     {
-        m_bytesLeft = m_imageSize;
+        m_bytesLeft = m_imageHeight*m_imageWidth;
         emit newImageAvailable(m_currentImage);
         m_currentImage.clear();
     }
+}
+
+int StreamInterface::imageHeight() const
+{
+    return m_imageHeight;
+}
+
+int StreamInterface::imageWidth() const
+{
+    return m_imageWidth;
 }

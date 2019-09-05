@@ -1,14 +1,5 @@
 #include "MainWindow.h"
 
-#include <QButtonGroup>
-#include <QVector>
-#include <QDebug>
-
-//#include <opencv2/imgproc/imgproc.hpp>
-//#include <opencv2/highgui/highgui.hpp>
-//#include <opencv2/opencv.hpp>
-
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -45,8 +36,10 @@ void MainWindow::connectButtonClicked()
 
 void MainWindow::newImageAvailable(const QByteArray& ba)
 {
-    QImage::Format image_format = QImage::Format_Indexed8;
-    QImage image(reinterpret_cast<const uchar*>(ba.data()), m_imageWidth, m_imageHeight, image_format);
+    QImage image(reinterpret_cast<const uchar*>(ba.data()),
+                 m_rpiStreamInterface->imageWidth(),
+                 m_rpiStreamInterface->imageHeight(),
+                 QImage::Format_Indexed8);
     m_liveViewLabel->setPixmap(QPixmap::fromImage(image.copy()));
 }
 

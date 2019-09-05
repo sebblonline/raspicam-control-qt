@@ -22,8 +22,8 @@ public:
 
     static const int STREAM_PORT;
 
-    int imageSize() const { return m_imageSize; }
-    void setImageSize(int imageSize) { m_imageSize = imageSize; }
+    int imageWidth() const;
+    int imageHeight() const;
 
 private slots:
     void newConnection();
@@ -37,7 +37,9 @@ private:
     QTcpSocket *m_streamSocket = nullptr;
     QByteArray m_currentImage;
 
-    int m_imageSize;
+    const int m_imageWidth = 640;
+    const int m_imageHeight = 480;
+
     int m_bytesLeft;
 
 };
