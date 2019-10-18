@@ -31,7 +31,7 @@ I prefer Qt Creator which I used for development and works out of the box. But t
 
 ## Future plans
 
-* Add interface to receive configuration settings
+* Add configuration settings (image size, frame rate, etc.) and send them to the raspi
 * Build as mobile app
 * ...
 
